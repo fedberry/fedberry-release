@@ -4,7 +4,7 @@
 Summary:        FedBerry release files
 Name:           fedberry-release
 Version:        23
-Release:        0.8
+Release:        0.9
 License:        MIT
 Group:	        System Environment/Base
 Source0:        LICENSE
@@ -119,6 +119,9 @@ rm -rf %{buildroot}
 %doc FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
 
 %changelog
+* Sun Mar 06 2016 mrjoshuap <jpreston at redhat dot com> - 23-0.9
+- Autogenerate html docs from md files
+
 * Thu Jan 28 2016 Vaughan <devel at agrez dot net> - 23-0.8
 - Import & initial build for FedBerry
 
