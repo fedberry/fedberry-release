@@ -4,18 +4,19 @@
 Summary:        FedBerry release files
 Name:           fedberry-release
 Version:        23
-Release:        0.8
+Release:        0.9
 License:        MIT
 Group:	        System Environment/Base
 Source0:        LICENSE
-Source1:        FedBerry-RELEASE-NOTES.html
+Source1:        https://raw.githubusercontent.com/fedberry/fedberry/master/RELEASE-NOTES.md
 Source2:        Fedora-Legal-README.txt
 Source3:        85-display-manager.preset
 Source4:        90-default.preset
 Source5:        99-default-disable.preset
-Source6:        FedBerry-README.html
-Source7:        FedBerry-INSTALL.html
+Source6:        https://raw.githubusercontent.com/fedberry/fedberry/master/README.md
+Source7:        https://raw.githubusercontent.com/fedberry/fedberry/master/INSTALL.md
 BuildArch:      noarch
+BuildRequires:  discount >= 2.1
 Obsoletes:      redhat-release
 Provides:       redhat-release
 Provides:       system-release
@@ -46,6 +47,9 @@ FedBerry release notes package.
 cp -a %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} %{SOURCE6} %{SOURCE7} .
 
 %build
+for MD_FILE in *.md; do
+  markdown -o FedBerry-${MD_FILE%.*}.html ${MD_FILE}
+done
 
 %install
 install -d %{buildroot}/etc
@@ -115,6 +119,9 @@ rm -rf %{buildroot}
 %doc FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
 
 %changelog
+* Sun Mar 06 2016 mrjoshuap <jpreston at redhat dot com> - 23-0.9
+- Autogenerate html docs from md files
+
 * Thu Jan 28 2016 Vaughan <devel at agrez dot net> - 23-0.8
 - Import & initial build for FedBerry
 
