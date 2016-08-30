@@ -4,7 +4,7 @@
 Summary:        FedBerry release files
 Name:           fedberry-release
 Version:        24
-Release:        0.2
+Release:        0.3
 License:        MIT
 Group:	        System Environment/Base
 Source0:        LICENSE
@@ -116,9 +116,12 @@ rm -rf %{buildroot}
 
 %files notes
 %defattr(-,root,root,-)
-%doc FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
+%doc FedBerry-README.html FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
 
 %changelog
+* Wed Jun 22 2016 Vaughan <devel at agrez dot net> - 24-0.3
+- Rebuild to include updated readme, release-notes and install files.
+
 * Wed Jun 22 2016 Vaughan <devel at agrez dot net> - 24-0.2
 - Update default systemd presets
 
