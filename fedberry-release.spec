@@ -4,7 +4,7 @@
 Summary:        FedBerry release files
 Name:           fedberry-release
 Version:        24
-Release:        0.3
+Release:        0.4
 License:        MIT
 Group:	        System Environment/Base
 Source0:        LICENSE
@@ -119,6 +119,9 @@ rm -rf %{buildroot}
 %doc FedBerry-README.html FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
 
 %changelog
+* Thu Sep 01 2016 Vaughan <devel at agrez dot net> - 24-0.4
+- Pull in further release note updates
+
 * Wed Jun 22 2016 Vaughan <devel at agrez dot net> - 24-0.3
 - Rebuild to include updated readme, release-notes and install files.
 
