@@ -4,7 +4,7 @@
 Summary:        FedBerry release files
 Name:           fedberry-release
 Version:        24
-Release:        0.4
+Release:        1
 License:        MIT
 Group:	        System Environment/Base
 Source0:        LICENSE
@@ -19,13 +19,13 @@ BuildArch:      noarch
 BuildRequires:  discount >= 2.1
 Obsoletes:      redhat-release
 Provides:       redhat-release
+Provides:       fedora-release
 Provides:       system-release
 Provides:       system-release(%{version})
 Requires:       fedora-repos
 Requires:       fedberry-repo
 Conflicts:      fedora-release
-Obsoletes:      generic-release
-Conflicts:      generic-release
+Obsoletes:      fedora-release
 
 
 %description
@@ -119,6 +119,9 @@ rm -rf %{buildroot}
 %doc FedBerry-README.html FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
 
 %changelog
+* Fri Sep 16 2016 Vaughan <devel at agrez dot net> - 24-1
+- Add Provides and Obsoletes: fedora-release
+
 * Thu Sep 01 2016 Vaughan <devel at agrez dot net> - 24-0.4
 - Pull in further release note updates
 
