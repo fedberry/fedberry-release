@@ -19,7 +19,7 @@ BuildArch:      noarch
 BuildRequires:  discount >= 2.1
 Obsoletes:      redhat-release
 Provides:       redhat-release
-Provides:       fedora-release
+Provides:       fedora-release = %{version}-%{release}
 Provides:       system-release
 Provides:       system-release(%{version})
 Requires:       fedora-repos
