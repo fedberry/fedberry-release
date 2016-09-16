@@ -4,27 +4,28 @@
 Summary:        FedBerry release files
 Name:           fedberry-release
 Version:        23
-Release:        0.9
+Release:        1
 License:        MIT
 Group:	        System Environment/Base
 Source0:        LICENSE
-Source1:        https://raw.githubusercontent.com/fedberry/fedberry/master/RELEASE-NOTES.md
+Source1:        https://github.com/fedberry/fedberry/raw/f23/RELEASE-NOTES.md
 Source2:        Fedora-Legal-README.txt
 Source3:        85-display-manager.preset
 Source4:        90-default.preset
 Source5:        99-default-disable.preset
-Source6:        https://raw.githubusercontent.com/fedberry/fedberry/master/README.md
-Source7:        https://raw.githubusercontent.com/fedberry/fedberry/master/INSTALL.md
+Source6:        https://github.com/fedberry/fedberry/raw/f23/README.md
+Source7:        https://github.com/fedberry/fedberry/raw/f23/INSTALL.md
 BuildArch:      noarch
 BuildRequires:  discount >= 2.1
 Obsoletes:      redhat-release
 Provides:       redhat-release
 Provides:       system-release
+Provides:       fedora-release = %{version}-%{release}
 Provides:       system-release(%{version})
 Requires:       fedora-repos
 Requires:       fedberry-repo
 Conflicts:      fedora-release
-Obsoletes:      generic-release
+Obsoletes:      fedora-release
 Conflicts:      generic-release
 
 
@@ -116,9 +117,14 @@ rm -rf %{buildroot}
 
 %files notes
 %defattr(-,root,root,-)
-%doc FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
+%doc FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html FedBerry-README.html
 
 %changelog
+* Fri Sep 16 2016 Vaughan <devel at agrez dot net> - 23-1
+- Add Provides: fedora-release = %%{version}-%%{release}
+- Update source links
+- %%doc FedBerry-README.html
+
 * Sun Mar 06 2016 mrjoshuap <jpreston at redhat dot com> - 23-0.9
 - Autogenerate html docs from md files
 
