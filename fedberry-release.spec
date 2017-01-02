@@ -4,7 +4,7 @@
 Summary:        FedBerry release files
 Name:           fedberry-release
 Version:        25
-Release:        1
+Release:        2
 License:        MIT
 Group:	        System Environment/Base
 Source0:        LICENSE
@@ -44,7 +44,7 @@ FedBerry release notes package.
 
 %prep
 %setup -c -T
-cp -a %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} %{SOURCE6} %{SOURCE7} .
+cp -a %{sources} .
 
 %build
 for MD_FILE in *.md; do
@@ -119,6 +119,10 @@ rm -rf %{buildroot}
 %doc FedBerry-README.html FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
 
 %changelog
+* Mon Jan 02 2017 Vaughan <devel at agrez dot net> - 25-2
+- Simplify %%prep
+- Bump release
+
 * Mon Jan 02 2017 Vaughan <devel at agrez dot net> - 25-1
 - New FedBerry release
 
