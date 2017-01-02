@@ -1,9 +1,9 @@
 %define release_name Twenty Four
-%define dist_version 24
+%define dist_version 25
 
 Summary:        FedBerry release files
 Name:           fedberry-release
-Version:        24
+Version:        25
 Release:        1
 License:        MIT
 Group:	        System Environment/Base
@@ -119,6 +119,9 @@ rm -rf %{buildroot}
 %doc FedBerry-README.html FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
 
 %changelog
+* Mon Jan 02 2017 Vaughan <devel at agrez dot net> - 25-1
+- New FedBerry release
+
 * Fri Sep 16 2016 Vaughan <devel at agrez dot net> - 24-1
 - Add Provides and Obsoletes: fedora-release
 
