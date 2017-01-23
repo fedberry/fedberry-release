@@ -1,10 +1,10 @@
-%define release_name Twenty Four
+%define release_name Twenty Five
 %define dist_version 25
 
 Summary:        FedBerry release files
 Name:           fedberry-release
 Version:        25
-Release:        2
+Release:        3
 License:        MIT
 Group:	        System Environment/Base
 Source0:        LICENSE
@@ -119,6 +119,9 @@ rm -rf %{buildroot}
 %doc FedBerry-README.html FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
 
 %changelog
+* Mon Jan 23 2017 Vaughan <devel at agrez dot net> - 25-3
+- Update %%{release_name}
+
 * Mon Jan 02 2017 Vaughan <devel at agrez dot net> - 25-2
 - Simplify %%prep
 - Bump release
