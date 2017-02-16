@@ -4,7 +4,7 @@
 Summary:        FedBerry release files
 Name:           fedberry-release
 Version:        25
-Release:        3
+Release:        4
 License:        MIT
 Group:	        System Environment/Base
 Source0:        LICENSE
@@ -76,14 +76,15 @@ CPE_NAME="cpe:/o:fedberry:fedberry%{version}"
 HOME_URL="https://fedberry.org"
 BUG_REPORT_URL="https://github.com/fedberry"
 EOF
+
 # Create the symlink for /etc/os-release
 ln -s ../usr/lib/os-release %{buildroot}/etc/os-release
 
 # Set up the dist tag macros
 install -d -m 755 %{buildroot}%{_rpmconfigdir}/macros.d
 cat >> %{buildroot}%{_rpmconfigdir}/macros.d/macros.dist << EOF
-# dist macros.
 
+# dist macros.
 %%fedora		%{dist_version}
 %%dist		.fc%{dist_version}
 %%fc%{dist_version}		1
@@ -119,6 +120,9 @@ rm -rf %{buildroot}
 %doc FedBerry-README.html FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
 
 %changelog
+* Thu Feb 16 2017 Vaughan <devel at agrez dot net> - 25-4
+- Rebuild to include updated readme, release-notes and install files
+
 * Mon Jan 23 2017 Vaughan <devel at agrez dot net> - 25-3
 - Update %%{release_name}
 
