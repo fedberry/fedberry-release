@@ -4,15 +4,15 @@
 Summary:        FedBerry release files
 Name:           fedberry-release
 Version:        25
-Release:        4
+Release:        5
 License:        MIT
 Group:	        System Environment/Base
-Source0:        LICENSE
-Source1:        https://raw.githubusercontent.com/fedberry/fedberry/master/RELEASE-NOTES.md
-Source2:        Fedora-Legal-README.txt
-Source3:        85-display-manager.preset
-Source4:        90-default.preset
-Source5:        99-default-disable.preset
+Source0:        https://raw.githubusercontent.com/fedberry/fedberry-release/master/LICENSE
+Source1:        https://raw.githubusercontent.com/fedberry/fedberry-release/master/Fedora-Legal-README.txt
+Source2:        https://raw.githubusercontent.com/fedberry/fedberry-release/master/85-display-manager.preset
+Source3:        https://raw.githubusercontent.com/fedberry/fedberry-release/master/90-default.preset
+Source4:        https://raw.githubusercontent.com/fedberry/fedberry-release/master/99-default-disable.preset
+Source5:        https://raw.githubusercontent.com/fedberry/fedberry/master/RELEASE-NOTES.md
 Source6:        https://raw.githubusercontent.com/fedberry/fedberry/master/README.md
 Source7:        https://raw.githubusercontent.com/fedberry/fedberry/master/INSTALL.md
 BuildArch:      noarch
@@ -120,6 +120,10 @@ rm -rf %{buildroot}
 %doc FedBerry-README.html FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
 
 %changelog
+* Thu Jun 01 2017 Vaughan <devel at agrez dot net> - 25-5
+- Update spec source file links
+- Rebuild to include updated readme, release-notes and install files
+
 * Thu Feb 16 2017 Vaughan <devel at agrez dot net> - 25-4
 - Rebuild to include updated readme, release-notes and install files
 
