@@ -1,10 +1,10 @@
-%define release_name Twenty Five
-%define dist_version 25
+%define release_name Twenty Six
+%define dist_version 26
 
 Summary:        FedBerry release files
 Name:           fedberry-release
-Version:        25
-Release:        5
+Version:        26
+Release:        1
 License:        MIT
 Group:	        System Environment/Base
 Source0:        https://raw.githubusercontent.com/fedberry/fedberry-release/master/LICENSE
@@ -120,6 +120,9 @@ rm -rf %{buildroot}
 %doc FedBerry-README.html FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
 
 %changelog
+* Sat Jul 08 2017 Vaughan <devel at agrez dot net> - 26-1
+- FedBerry 26 release
+
 * Thu Jun 01 2017 Vaughan <devel at agrez dot net> - 25-5
 - Update spec source file links
 - Rebuild to include updated readme, release-notes and install files
