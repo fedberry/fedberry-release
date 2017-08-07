@@ -4,7 +4,7 @@
 Summary:        FedBerry release files
 Name:           fedberry-release
 Version:        26
-Release:        1
+Release:        2
 License:        MIT
 Group:	        System Environment/Base
 Source0:        https://raw.githubusercontent.com/fedberry/fedberry-release/master/LICENSE
@@ -120,6 +120,9 @@ rm -rf %{buildroot}
 %doc FedBerry-README.html FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
 
 %changelog
+* Mon Jul 24 2017 Vaughan <devel at agrez dot net> - 26-2
+- Update default systemd presets
+
 * Sat Jul 08 2017 Vaughan <devel at agrez dot net> - 26-1
 - FedBerry 26 release
 
