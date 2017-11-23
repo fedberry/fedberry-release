@@ -1,10 +1,10 @@
-%define release_name Twenty Six
-%define dist_version 26
+%define release_name Twenty Seven
+%define dist_version 27
 
 Summary:        FedBerry release files
 Name:           fedberry-release
-Version:        26
-Release:        2
+Version:        27
+Release:        1
 License:        MIT
 Group:	        System Environment/Base
 Source0:        https://raw.githubusercontent.com/fedberry/fedberry-release/master/LICENSE
@@ -120,6 +120,9 @@ rm -rf %{buildroot}
 %doc FedBerry-README.html FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
 
 %changelog
+* Thu Nov 23 2017 Vaughan <devel at agrez dot net> - 27-1
+- FedBerry 27 release
+
 * Mon Jul 24 2017 Vaughan <devel at agrez dot net> - 26-2
 - Update default systemd presets
 
