@@ -1,42 +1,45 @@
-%define release_name Twenty Seven
-%define dist_version 27
+%define release_name Twenty Eight
+%define dist_version 28
 
-Summary:        FedBerry release files
-Name:           fedberry-release
-Version:        27
-Release:        1
-License:        MIT
-Group:	        System Environment/Base
-Source0:        https://raw.githubusercontent.com/fedberry/fedberry-release/master/LICENSE
-Source1:        https://raw.githubusercontent.com/fedberry/fedberry-release/master/Fedora-Legal-README.txt
-Source2:        https://raw.githubusercontent.com/fedberry/fedberry-release/master/85-display-manager.preset
-Source3:        https://raw.githubusercontent.com/fedberry/fedberry-release/master/90-default.preset
-Source4:        https://raw.githubusercontent.com/fedberry/fedberry-release/master/99-default-disable.preset
-Source5:        https://raw.githubusercontent.com/fedberry/fedberry/master/RELEASE-NOTES.md
-Source6:        https://raw.githubusercontent.com/fedberry/fedberry/master/README.md
-Source7:        https://raw.githubusercontent.com/fedberry/fedberry/master/INSTALL.md
-BuildArch:      noarch
+Summary:    FedBerry release files
+Name:       fedberry-release
+Version:    28
+Release:    1
+License:    MIT
+Group:      System Environment/Base
+URL:        https://github.com/fedberry/fedberry-release
+Source0:    https://raw.githubusercontent.com/fedberry/fedberry-release/master/LICENSE
+Source1:    https://raw.githubusercontent.com/fedberry/fedberry-release/master/Fedora-Legal-README.txt
+Source2:    https://raw.githubusercontent.com/fedberry/fedberry-release/master/85-display-manager.preset
+Source3:    https://raw.githubusercontent.com/fedberry/fedberry-release/master/90-default.preset
+Source4:    https://raw.githubusercontent.com/fedberry/fedberry-release/master/99-default-disable.preset
+Source5:    https://raw.githubusercontent.com/fedberry/fedberry/master/RELEASE-NOTES.md
+Source6:    https://raw.githubusercontent.com/fedberry/fedberry/master/README.md
+Source7:    https://raw.githubusercontent.com/fedberry/fedberry/master/INSTALL.md
+BuildArch:  noarch
 BuildRequires:  discount >= 2.1
-Obsoletes:      redhat-release
-Provides:       redhat-release
-Provides:       fedora-release = %{version}-%{release}
-Provides:       system-release
-Provides:       system-release(%{version})
-Requires:       fedora-repos
-Requires:       fedberry-repo
-Conflicts:      fedora-release
-Obsoletes:      fedora-release
+
+Obsoletes:  redhat-release
+Provides:   redhat-release
+Provides:   fedora-release = %{version}-%{release}
+Provides:   system-release
+Provides:   system-release(%{version})
+Requires:   fedora-repos
+Requires:   fedberry-repo
+Conflicts:  fedora-release
+Obsoletes:  fedora-release
 
 
 %description
 FedBerry release files such as various /etc/ files that define the release.
 
+
 %package notes
-Summary:	Release Notes
-License:	Open Publication
-Group:		System Environment/Base
-Provides:	system-release-notes = %{version}-%{release}
-Conflicts:	fedora-release-notes
+Summary:    Release Notes
+License:    Open Publication
+Group:      System Environment/Base
+Provides:   system-release-notes = %{version}-%{release}
+Conflicts:  fedora-release-notes
 
 %description notes
 FedBerry release notes package.
@@ -46,10 +49,12 @@ FedBerry release notes package.
 %setup -c -T
 cp -a %{sources} .
 
+
 %build
 for MD_FILE in *.md; do
   markdown -o FedBerry-${MD_FILE%.*}.html ${MD_FILE}
 done
+
 
 %install
 install -d %{buildroot}/etc
@@ -85,9 +90,9 @@ install -d -m 755 %{buildroot}%{_rpmconfigdir}/macros.d
 cat >> %{buildroot}%{_rpmconfigdir}/macros.d/macros.dist << EOF
 
 # dist macros.
-%%fedora		%{dist_version}
-%%dist		.fc%{dist_version}
-%%fc%{dist_version}		1
+%%fedora    %{dist_version}
+%%dist      .fc%{dist_version}
+%%fc%{dist_version} 1
 EOF
 
 # Add presets
@@ -96,8 +101,6 @@ install -m 0644 85-display-manager.preset %{buildroot}%{_prefix}/lib/systemd/sys
 install -m 0644 90-default.preset %{buildroot}%{_prefix}/lib/systemd/system-preset/
 install -m 0644 99-default-disable.preset %{buildroot}%{_prefix}/lib/systemd/system-preset/
 
-%clean
-rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,-)
@@ -115,11 +118,17 @@ rm -rf %{buildroot}
 %{_prefix}/lib/systemd/system-preset/90-default.preset
 %{_prefix}/lib/systemd/system-preset/99-default-disable.preset
 
+
 %files notes
 %defattr(-,root,root,-)
 %doc FedBerry-README.html FedBerry-RELEASE-NOTES.html FedBerry-INSTALL.html
 
+
 %changelog
+* Tue Jun 26 2018 Vaughan <devel at agrez dot net> - 28-1
+- FedBerry 28 release
+- Update spec
+
 * Thu Nov 23 2017 Vaughan <devel at agrez dot net> - 27-1
 - FedBerry 27 release
 
