@@ -1,9 +1,9 @@
-%define release_name Twenty Eight
-%define dist_version 28
+%define release_name Twenty Nine
+%define dist_version 29
 
 Summary:    FedBerry release files
 Name:       fedberry-release
-Version:    28
+Version:    29
 Release:    1
 License:    MIT
 Group:      System Environment/Base
@@ -125,6 +125,9 @@ install -m 0644 99-default-disable.preset %{buildroot}%{_prefix}/lib/systemd/sys
 
 
 %changelog
+* Tue Oct 09 2018 Vaughan <devel at agrez dot net> - 29-1
+- FedBerry 29 release
+
 * Tue Jun 26 2018 Vaughan <devel at agrez dot net> - 28-1
 - FedBerry 28 release
 - Update spec
