@@ -8,14 +8,14 @@ Release:    1
 License:    MIT
 Group:      System Environment/Base
 URL:        https://github.com/fedberry/fedberry-release
-Source0:    https://raw.githubusercontent.com/fedberry/fedberry-release/master/LICENSE
-Source1:    https://raw.githubusercontent.com/fedberry/fedberry-release/master/Fedora-Legal-README.txt
-Source2:    https://raw.githubusercontent.com/fedberry/fedberry-release/master/85-display-manager.preset
-Source3:    https://raw.githubusercontent.com/fedberry/fedberry-release/master/90-default.preset
-Source4:    https://raw.githubusercontent.com/fedberry/fedberry-release/master/99-default-disable.preset
-Source5:    https://raw.githubusercontent.com/fedberry/fedberry/master/RELEASE-NOTES.md
-Source6:    https://raw.githubusercontent.com/fedberry/fedberry/master/README.md
-Source7:    https://raw.githubusercontent.com/fedberry/fedberry/master/INSTALL.md
+Source0:    %{url}/raw/master/LICENSE
+Source1:    %{url}/raw/master//Fedora-Legal-README.txt
+Source2:    %{url}/raw/master//85-display-manager.preset
+Source3:    %{url}/raw/master//90-default.preset
+Source4:    %{url}/raw/master//99-default-disable.preset
+Source5:    %{url}/raw/master//RELEASE-NOTES.md
+Source6:    %{url}/raw/master//README.md
+Source7:    %{url}/raw/master//INSTALL.md
 BuildArch:  noarch
 BuildRequires:  discount >= 2.1
 
