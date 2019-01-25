@@ -103,6 +103,15 @@ install -m 0644 90-default.preset %{buildroot}%{_prefix}/lib/systemd/system-pres
 install -m 0644 90-default-user.preset %{buildroot}%{_prefix}/lib/systemd/system-preset/
 install -m 0644 99-default-disable.preset %{buildroot}%{_prefix}/lib/systemd/system-preset/
 
+%post
+/usr/bin/systemctl enable dbus-daemon.service >/dev/null 2>&1 || :
+
+%postun
+if [ $1 -ge 1 ] ; then
+    # Package upgrade, not uninstall
+    /usr/bin/systemctl enable dbus-daemon.service >/dev/null 2>&1 || :
+fi
+
 
 %files
 %defattr(-,root,root,-)
