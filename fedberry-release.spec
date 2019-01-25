@@ -4,7 +4,7 @@
 Summary:    FedBerry release files
 Name:       fedberry-release
 Version:    29
-Release:    1
+Release:    2
 License:    MIT
 Group:      System Environment/Base
 URL:        https://github.com/fedberry/fedberry-release
@@ -137,6 +137,9 @@ fi
 
 
 %changelog
+* Fri Jan 25 2019 Vaughan <devel at agrez dot net> - 29-2
+- Update default presets for systemd
+
 * Tue Oct 09 2018 Vaughan <devel at agrez dot net> - 29-1
 - FedBerry 29 release
 
